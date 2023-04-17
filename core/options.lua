@@ -9,3 +9,6 @@ opt.scrolloff = 999
 opt.cursorline = true
 opt.shiftwidth = 4
 opt.tabstop = 4
+
+opt.relativenumber = true
+opt.number = true
