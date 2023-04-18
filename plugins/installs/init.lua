@@ -9,6 +9,14 @@ return {
             })
         end
     },
+    { "echasnovski/mini.align", version = false },
+    { "simrat39/rust-tools.nvim", lazy = false,
+        config = function ()
+            require("rust-tools").setup(
+                require("custom.plugins.installs.rust-tools")
+            )
+        end
+    },
 --   {
 --     "max397574/better-escape.nvim",
 --     event = "InsertEnter",

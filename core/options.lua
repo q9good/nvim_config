@@ -12,7 +12,7 @@ opt.tabstop = 4
 
 opt.relativenumber = true
 opt.number = true
-opt.mouse = a
+opt.mouse = "a"
 local undodir = vim.fn.expand('~/.config/nvim/undodir')
 -- if the undodir don't exist, we'll create it
 if not vim.fn.isdirectory(undodir)
