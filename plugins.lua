@@ -77,5 +77,47 @@ local plugins = {
       return M
     end,
   },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+        })
+    end
+  },
+  {
+    "phaazon/hop.nvim",
+    lazy = true,
+    keys = { "M" },
+    config = function()
+        require("hop").setup({})
+        -- vim.api.nvim_set_keymap("n", "R", "<cmd>HopChar2<cr>", { silent = true })
+        vim.api.nvim_set_keymap("n", "E", "<cmd>HopChar1<cr>", { silent = true })
+        -- vim.api.nvim_set_keymap("n", "U", "<cmd>HopWord<cr>", { silent = true })
+        -- vim.api.nvim_set_keymap("n", "C", "<cmd>HopLine<cr>", { silent = true })
+        -- vim.api.nvim_set_keymap("n", "P", "<cmd>HopPattern<cr>", { silent = true })
+    end,
+  }, 
+  {
+    "romgrk/nvim-treesitter-context",
+    lazy = true,
+    event = { "User FileOpened" },
+    config = function()
+        require("treesitter-context").setup({
+            enable = true,
+            throttle = true,
+            max_lines = 0,
+            patterns = {
+                default = {
+                    "class",
+                    "function",
+                    "method",
+                },
+            },
+        })
+    end,
+  }, 
 }
 return plugins
